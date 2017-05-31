@@ -1,0 +1,49 @@
+<script type="text/javascript">
+$(function(){
+	$(".datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#primerNivel").change(function() {			
+
+			$.ajax({
+				type: "POST",
+				url: "${pageContext.request.contextPath}/prodecon/second",
+				data: {primero: $("#primerNivel").val()},
+				dataType: 'json',
+				success: function(json){
+					$("#segundoNivel").empty();
+					$("#tercerNivel").empty();
+					$.each(json, function(i, value){
+						
+						$("#segundoNivel").append($('<option>').text(value).attr('value', value));
+					});
+					
+			        }
+			});			
+		});		
+	});
+</script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#segundoNivel").change(function() {			
+
+			$.ajax({
+				type: "POST",
+				url: "${pageContext.request.contextPath}/prodecon/third",
+				data: {segundo: $("#segundoNivel").val()},
+				dataType: 'json',
+				success: function(json){					
+					$("#tercerNivel").empty();
+					$.each(json, function(i, value){
+						
+						$("#tercerNivel").append($('<option>').text(value).attr('value', value));
+					});
+					
+			        }
+			});			
+		});		
+	});
+</script>

@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<catalogos>
+  <xs:schema id="catalogos" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="catalogos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="subdelegaciones">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="delsubi" type="xs:string" minOccurs="0" />
+                <xs:element name="subdelegacion" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="garantia">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="idTipo" type="xs:string" minOccurs="0" />
+                <xs:element name="tipo" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="config">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="fecha" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <subdelegaciones>
+    <delsubi>0</delsubi>
+    <subdelegacion>Nacional</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>101</delsubi>
+    <subdelegacion>Aguascalientes-Aguascalientes Norte</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>119</delsubi>
+    <subdelegacion>Aguascalientes-Aguascalientes Sur</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>201</delsubi>
+    <subdelegacion>Baja California-Mexicali</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>202</delsubi>
+    <subdelegacion>Baja California-Tecate</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>203</delsubi>
+    <subdelegacion>Baja California-Ensenada</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>204</delsubi>
+    <subdelegacion>Baja California-San Luis Río Colorado</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>205</delsubi>
+    <subdelegacion>Baja California-Tijuana</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>301</delsubi>
+    <subdelegacion>Baja California Sur-La Paz</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>308</delsubi>
+    <subdelegacion>Baja California Sur-Cabo San Lucas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>401</delsubi>
+    <subdelegacion>Campeche-Campeche</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>404</delsubi>
+    <subdelegacion>Campeche-Ciudad del Carmen</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>503</delsubi>
+    <subdelegacion>Coahuila-Saltillo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>509</delsubi>
+    <subdelegacion>Coahuila-Torreón</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>511</delsubi>
+    <subdelegacion>Coahuila-Ciudad Acuña</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>512</delsubi>
+    <subdelegacion>Coahuila-Piedras Negras</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>517</delsubi>
+    <subdelegacion>Coahuila-Monclova</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>523</delsubi>
+    <subdelegacion>Coahuila-Sabinas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>601</delsubi>
+    <subdelegacion>Colima-Colima</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>603</delsubi>
+    <subdelegacion>Colima-Manzanillo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>607</delsubi>
+    <subdelegacion>Colima-Tecomán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>701</delsubi>
+    <subdelegacion>Chiapas-Tuxtla Gutiérrez</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>702</delsubi>
+    <subdelegacion>Chiapas-Tapachula</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>801</delsubi>
+    <subdelegacion>Chihuahua-Chihuahua</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>803</delsubi>
+    <subdelegacion>Chihuahua-Cuauhtémoc</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>805</delsubi>
+    <subdelegacion>Chihuahua-Delicias</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>808</delsubi>
+    <subdelegacion>Chihuahua-Nuevo Casas Grandes</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>810</delsubi>
+    <subdelegacion>Chihuahua-Juárez 1</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>822</delsubi>
+    <subdelegacion>Chihuahua-Hidalgo del Parral</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>860</delsubi>
+    <subdelegacion>Chihuahua-Juárez 2</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1001</delsubi>
+    <subdelegacion>Durango-Durango</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1013</delsubi>
+    <subdelegacion>Durango-Gómez Palacio</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1101</delsubi>
+    <subdelegacion>Guanajuato-Guanajuato</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1105</delsubi>
+    <subdelegacion>Guanajuato-Irapuato</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1108</delsubi>
+    <subdelegacion>Guanajuato-Celaya</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1114</delsubi>
+    <subdelegacion>Guanajuato-Salamanca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1117</delsubi>
+    <subdelegacion>Guanajuato-León</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1201</delsubi>
+    <subdelegacion>Guerrero-Chilpancingo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1202</delsubi>
+    <subdelegacion>Guerrero-Acapulco</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1203</delsubi>
+    <subdelegacion>Guerrero-Iguala</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1213</delsubi>
+    <subdelegacion>Guerrero-Zihuatanejo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1301</delsubi>
+    <subdelegacion>Hidalgo-Pachuca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1305</delsubi>
+    <subdelegacion>Hidalgo-Tulancingo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1307</delsubi>
+    <subdelegacion>Hidalgo-Ciudad Sahagún</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1310</delsubi>
+    <subdelegacion>Hidalgo-Tula de Allende</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1412</delsubi>
+    <subdelegacion>Jalisco-Tepatitlán de Morelos</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1415</delsubi>
+    <subdelegacion>Jalisco-Ocotlán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1422</delsubi>
+    <subdelegacion>Jalisco-Ciudad Guzmán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1438</delsubi>
+    <subdelegacion>Jalisco-Sector Hidalgo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1439</delsubi>
+    <subdelegacion>Jalisco-Libertad Reforma</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1440</delsubi>
+    <subdelegacion>Jalisco-Sector Juárez</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1450</delsubi>
+    <subdelegacion>Jalisco-Puerto Vallarta</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1506</delsubi>
+    <subdelegacion>México Oriente-Tlalnepantla</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1554</delsubi>
+    <subdelegacion>México Oriente-Ecatepec</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1580</delsubi>
+    <subdelegacion>México Oriente-Los Reyes</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1601</delsubi>
+    <subdelegacion>México Poniente-Toluca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1605</delsubi>
+    <subdelegacion>México Poniente-Naucalpan</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1703</delsubi>
+    <subdelegacion>Michoacán-Morelia</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1709</delsubi>
+    <subdelegacion>Michoacán-Uruapan</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1713</delsubi>
+    <subdelegacion>Michoacán-Zamora</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1717</delsubi>
+    <subdelegacion>Michoacán-Zitácuaro</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1727</delsubi>
+    <subdelegacion>Michoacán-Lázaro Cárdenas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1801</delsubi>
+    <subdelegacion>Morelos-Cuernavaca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1811</delsubi>
+    <subdelegacion>Morelos-Cuautla</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1815</delsubi>
+    <subdelegacion>Morelos-Zacatepec</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>1901</delsubi>
+    <subdelegacion>Nayarit-Tepic</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2006</delsubi>
+    <subdelegacion>Nuevo León-Montemorelos</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2008</delsubi>
+    <subdelegacion>Nuevo León-Apodaca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2031</delsubi>
+    <subdelegacion>Nuevo León-Nuevo León Noreste</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2032</delsubi>
+    <subdelegacion>Nuevo León-Nuevo León Noroeste</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2033</delsubi>
+    <subdelegacion>Nuevo León-Nuevo León Sureste</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2034</delsubi>
+    <subdelegacion>Nuevo León-Nuevo León Suroeste</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2102</delsubi>
+    <subdelegacion>Oaxaca-Oaxaca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2103</delsubi>
+    <subdelegacion>Oaxaca-Salina Cruz</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2104</delsubi>
+    <subdelegacion>Oaxaca-Tuxtepec</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2153</delsubi>
+    <subdelegacion>Oaxaca-Huatulco</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2201</delsubi>
+    <subdelegacion>Puebla-Puebla Norte</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2205</delsubi>
+    <subdelegacion>Puebla-Teziutlán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2206</delsubi>
+    <subdelegacion>Puebla-Tehuacán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2208</delsubi>
+    <subdelegacion>Puebla-Izúcar de Matamoros</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2222</delsubi>
+    <subdelegacion>Puebla-Puebla Sur</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2301</delsubi>
+    <subdelegacion>Querétaro-Querétaro</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2303</delsubi>
+    <subdelegacion>Querétaro-San Juan del Río</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2401</delsubi>
+    <subdelegacion>Quintana Roo-Chetumal</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2402</delsubi>
+    <subdelegacion>Quintana Roo-Playa del Carmen</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2407</delsubi>
+    <subdelegacion>Quintana Roo-Cancún</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2501</delsubi>
+    <subdelegacion>San Luis Potosí-San Luis Potosí Oriente</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2503</delsubi>
+    <subdelegacion>San Luis Potosí-Matehuala</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2505</delsubi>
+    <subdelegacion>San Luis Potosí-Ciudad Valles</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2560</delsubi>
+    <subdelegacion>San Luis Potosí-San Luis Potosí Poniente</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2601</delsubi>
+    <subdelegacion>Sinaloa-Culiacán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2603</delsubi>
+    <subdelegacion>Sinaloa-Los Mochis</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2604</delsubi>
+    <subdelegacion>Sinaloa-Guasave</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2605</delsubi>
+    <subdelegacion>Sinaloa-Mazatlán</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2701</delsubi>
+    <subdelegacion>Sonora-Hermosillo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2703</delsubi>
+    <subdelegacion>Sonora-Guaymas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2707</delsubi>
+    <subdelegacion>Sonora-Navojoa</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2710</delsubi>
+    <subdelegacion>Sonora-Nogales</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2713</delsubi>
+    <subdelegacion>Sonora-Caborca</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2751</delsubi>
+    <subdelegacion>Sonora-Agua Prieta</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2757</delsubi>
+    <subdelegacion>Sonora-Nacozari</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2770</delsubi>
+    <subdelegacion>Sonora-Ciudad Obregón</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2801</delsubi>
+    <subdelegacion>Tabasco-Villahermosa</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2802</delsubi>
+    <subdelegacion>Tabasco-Cárdenas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2901</delsubi>
+    <subdelegacion>Tamaulipas-Ciudad Victoria</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2904</delsubi>
+    <subdelegacion>Tamaulipas-Reynosa</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2910</delsubi>
+    <subdelegacion>Tamaulipas-Tampico</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2913</delsubi>
+    <subdelegacion>Tamaulipas-Ciudad Mante</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2918</delsubi>
+    <subdelegacion>Tamaulipas-Nuevo Laredo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>2919</delsubi>
+    <subdelegacion>Tamaulipas-Matamoros</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3001</delsubi>
+    <subdelegacion>Tlaxcala-Tlaxcala</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3102</delsubi>
+    <subdelegacion>Veracruz Norte-Xalapa</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3107</delsubi>
+    <subdelegacion>Veracruz Norte-Poza Rica</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3109</delsubi>
+    <subdelegacion>Veracruz Norte-Martínez de la Torre</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3112</delsubi>
+    <subdelegacion>Veracruz Norte-Veracruz</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3125</delsubi>
+    <subdelegacion>Veracruz Norte-Lerdo de Tejada</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3202</delsubi>
+    <subdelegacion>Veracruz Sur-Córdoba</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3203</delsubi>
+    <subdelegacion>Veracruz Sur-Orizaba</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3238</delsubi>
+    <subdelegacion>Veracruz Sur-Cosamaloapan</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3245</delsubi>
+    <subdelegacion>Veracruz Sur-Coatzacoalcos</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3301</delsubi>
+    <subdelegacion>Yucatán-Mérida Norte</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3333</delsubi>
+    <subdelegacion>Yucatán-Mérida Sur</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3401</delsubi>
+    <subdelegacion>Zacatecas-Zacatecas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3409</delsubi>
+    <subdelegacion>Zacatecas-Fresnillo</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3911</delsubi>
+    <subdelegacion>D.F. Norte-Magdalena de las Salinas</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3916</delsubi>
+    <subdelegacion>D.F. Norte-Polanco</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3954</delsubi>
+    <subdelegacion>D.F. Norte-Santa María la Ribera</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3956</delsubi>
+    <subdelegacion>D.F. Norte-Guerrero</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>3957</delsubi>
+    <subdelegacion>D.F. Norte-Centro</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>4001</delsubi>
+    <subdelegacion>D.F. Sur-San Angel</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>4006</delsubi>
+    <subdelegacion>D.F. Sur-Del Valle</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>4011</delsubi>
+    <subdelegacion>D.F. Sur-Santa Anita</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>4054</delsubi>
+    <subdelegacion>D.F. Sur-Churubusco</subdelegacion>
+  </subdelegaciones>
+  <subdelegaciones>
+    <delsubi>4058</delsubi>
+    <subdelegacion>D.F. Sur-Piedad Narvarte</subdelegacion>
+  </subdelegaciones>
+  <garantia>
+    <idTipo>0</idTipo>
+    <tipo> </tipo>
+  </garantia>
+  <garantia>
+    <idTipo>1</idTipo>
+    <tipo>Deposito De Dinero En Inst. De Credito Autorizada</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>2</idTipo>
+    <tipo>Prenda</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>3</idTipo>
+    <tipo>Hipoteca</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>4</idTipo>
+    <tipo>Fianza Otorgada Por Institucion Autorizada</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>5</idTipo>
+    <tipo>Obligacion Solidaria Asumida Por Terceros</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>6</idTipo>
+    <tipo>Embargo En Via Administrativa</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>7</idTipo>
+    <tipo>Titulos Valores o Cartera De Creditos</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>8</idTipo>
+    <tipo>Garantia Por Constancia De Camaras o Asociaciones</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>9</idTipo>
+    <tipo>Otras No Especificadas</tipo>
+  </garantia>
+  <garantia>
+    <idTipo>A</idTipo>
+    <tipo>Carta De Credito</tipo>
+  </garantia>
+  <config>
+    <fecha>31/05/2014</fecha>
+  </config>
+</catalogos>
