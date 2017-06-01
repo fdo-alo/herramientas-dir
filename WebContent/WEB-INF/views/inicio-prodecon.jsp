@@ -2,8 +2,10 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <jsp:include page="header.jsp" />
 
-
+<%@page session="false"%>
 <h1>Prodecon</h1>
+
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
 
 <c:if test='${resultado!="" && resultado!=null && resultado!="Error"}'>
 	<div class="alert alert-success">${resultado}</div>

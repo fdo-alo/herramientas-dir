@@ -21,7 +21,7 @@ public class WebServletConfiguration implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
         
-        FilterRegistration.Dynamic filter = ctx.addFilter("OpenSessionInViewFilter", OpenSessionInViewFilter.class);
+        FilterRegistration.Dynamic filter = ctx.addFilter("OpenSessionInViewFilter", OpenSessionInViewFilter.class);        
         filter.setInitParameter("singleSession", "true");
         filter.addMappingForServletNames(null, true, "dispatcher");
         

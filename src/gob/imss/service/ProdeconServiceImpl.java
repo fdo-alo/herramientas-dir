@@ -46,7 +46,7 @@ public class ProdeconServiceImpl implements ProdeconService {
 	
 	@Override
 	@Transactional
-	public int prodeconLastRegister(){
+	public int prodeconLastRegisterAsc(){
 		
 		List<Prodecon> lista = prodeconDAO.getProdecon();
 		
@@ -72,6 +72,17 @@ public class ProdeconServiceImpl implements ProdeconService {
 	public List<Prodecon> prodeconBetweenDates(String inicDate, String finalDate) {
 		// TODO Auto-generated method stub
 		return prodeconDAO.prodeconBetweenDates(inicDate, finalDate);
+	}
+
+	@Override
+	public int prodeconLastRegisterDesc() {
+		
+		List<Prodecon> lista = prodeconDAO.getProdecon();
+		
+		
+		return	lista.get(0).getNumero() + 1;
+		
+		
 	}
 
 }

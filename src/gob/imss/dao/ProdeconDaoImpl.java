@@ -24,7 +24,7 @@ public class ProdeconDaoImpl implements ProdeconDAO {
 	public List<Prodecon> getProdecon() {
 		session = sessionFactory.getCurrentSession();
 
-		Query<Prodecon> query = session.createQuery("from Prodecon order by numero", Prodecon.class);
+		Query<Prodecon> query = session.createQuery("from Prodecon order by numero desc", Prodecon.class);
 
 		List<Prodecon> prodecon = query.getResultList();
 

@@ -1,6 +1,5 @@
 package gob.imss.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.sql.Date;
@@ -155,7 +154,7 @@ public class ProdeconController {
 		model.addAttribute("first", first);
 		model.addAttribute("segundoNivel", secondhm);
 		model.addAttribute("tercerNivel", thirdhm);
-		model.addAttribute("consecutivo", prodeconService.prodeconLastRegister());
+		model.addAttribute("consecutivo", prodeconService.prodeconLastRegisterDesc());
 		model.addAttribute("prodecon", prodecon);
 
 		return "agregar-prodecon";
@@ -250,7 +249,7 @@ public class ProdeconController {
 			model.addAttribute("first", first);
 			model.addAttribute("segundoNivel", secondhm);
 			model.addAttribute("tercerNivel", thirdhm);
-			model.addAttribute("consecutivo", prodeconService.prodeconLastRegister());
+			model.addAttribute("consecutivo", prodeconService.prodeconLastRegisterDesc());
 			model.addAttribute("prodecon", prodecon);
 			
 			return "agregar-prodecon";
