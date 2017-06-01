@@ -1,29 +1,29 @@
 package gob.imss.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,14 +35,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
 
 import gob.imss.config.FTPUpload;
-import gob.imss.config.FileMeta;
 import gob.imss.entity.Prodecon;
 import gob.imss.service.DelegacionesService;
 import gob.imss.service.NivelesService;
@@ -169,70 +166,53 @@ public class ProdeconController {
 	{
 		Prodecon prodecon = prodeconService.prodeconById(numero);
 		
+		model.addAttribute("promovente", prodecon.getPromovente());
+		model.addAttribute("queja", prodecon.getQueja());
+		model.addAttribute("digital", prodecon.getDigital());
+		
 		return "upload-file";
 	}
 	
 	
-	LinkedList<FileMeta> files = new LinkedList<FileMeta>();
-    FileMeta fileMeta = null;
-    
+	    
 	@PostMapping("/prodecon/{numero}/upload")
 	@ResponseBody
-	public LinkedList<FileMeta> uploadFiles(MultipartHttpServletRequest request, HttpServletResponse response, @PathVariable int numero) throws IllegalStateException, IOException
+	public String uploadFiles(HttpServletRequest request, HttpServletResponse response, @PathVariable int numero) throws IllegalStateException, IOException
 	{
+		
+		if (!ServletFileUpload.isMultipartContent(request)) {
+            throw new IllegalArgumentException("Request is not multipart, please 'multipart/form-data' enctype for your form.");
+        }
+		
 		Prodecon prodecon = prodeconService.prodeconById(numero);
+		String json;
 		
-		//1. build an iterator
-        Iterator<String> itr =  request.getFileNames();
-        MultipartFile mpf = null;
+		FTPUpload ftpUpload = new FTPUpload();		
+		ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
+        
+        try{
+        	List<FileItem> list = upload.parseRequest(request);
+        	
+        	for(FileItem item : list)
+        	{
+        		if (!item.isFormField())
+        		{
+        			ftpUpload.uploadFiles(prodecon.getDigital(), item.getName() , item.getInputStream() );
+        		}
+        	}
+        	
+        	        	
+        }catch (FileUploadException e) {
+			System.out.println("Error al grabar es: " + e.getMessage());
+			json = new Gson().toJson("Error al grabar es: " + e.getMessage());
+		}
 		
-      //2. get each file
-        while(itr.hasNext()){
+		json = new Gson().toJson("Procesado correctamente");
 
-            //2.1 get next MultipartFile
-            mpf = request.getFile(itr.next()); 
-            System.out.println(mpf.getOriginalFilename() +" uploaded! "+files.size());
-
-            //2.2 if files > 10 remove the first from the list
-            if(files.size() >= 10)
-                files.pop();
-
-            //2.3 create new fileMeta
-            fileMeta = new FileMeta();
-            fileMeta.setFileName(mpf.getOriginalFilename());
-            fileMeta.setFileSize(mpf.getSize()/1024+" Kb");
-            fileMeta.setFileType(mpf.getContentType());
-
-            try {
-               fileMeta.setBytes(mpf.getBytes());
-
-                // copy file to local disk (make sure the path "e.g. D:/temp/files" exists)            
-                FileCopyUtils.copy(mpf.getBytes(), new FileOutputStream("c:/test/"+mpf.getOriginalFilename()));
-
-           } catch (IOException e) {
-               // TODO Auto-generated catch block
-               e.printStackTrace();
-           }
-            //2.4 add to files
-            files.add(fileMeta);
-        }
-       // result will be like this
-       // [{"fileName":"app_engine-85x77.png","fileSize":"8 Kb","fileType":"image/png"},...]
-       return files;
+		System.out.println(json);
+		return json;
+		
 	}
-	
-	@GetMapping("/get/{value}")
-	public void get(HttpServletResponse response,@PathVariable String value){
-        FileMeta getFile = files.get(Integer.parseInt(value));
-        try {      
-               response.setContentType(getFile.getFileType());
-               response.setHeader("Content-disposition", "attachment; filename=\""+getFile.getFileName()+"\"");
-               FileCopyUtils.copy(getFile.getBytes(), response.getOutputStream());
-        }catch (IOException e) {
-               // TODO Auto-generated catch block
-               e.printStackTrace();
-        }
-    }
 
 	@PostMapping("/prodecon/agregar")
 	public String saveProdeconPost(Model model, @ModelAttribute("prodecon") @Valid Prodecon prodecon, BindingResult result,

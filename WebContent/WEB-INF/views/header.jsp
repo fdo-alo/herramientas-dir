@@ -31,6 +31,7 @@
 
 <!-- Custom styles for this template -->
 <link href="${pageContext.request.contextPath}/resources/css/theme.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/fileinput.min.css" rel="stylesheet">
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="${pageContext.request.contextPath}/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -42,18 +43,18 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="${pageContext.request.contextPath}/resources/js/jquery-1.9.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.ui.widget.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.iframe-transport.js"></script>
+	<!-- script src="${pageContext.request.contextPath}/resources/js/jquery.iframe-transport.js"></script-->
     <script src="${pageContext.request.contextPath}/resources/js/jquery.fileupload.js"></script>
     
     <!-- we code these -->
-<link href="${pageContext.request.contextPath}/resources/css/dropzone.css" rel="stylesheet" />
-<script src="${pageContext.request.contextPath}/resources/js/myuploadfunction.js"></script>
+<%-- <link href="${pageContext.request.contextPath}/resources/css/dropzone.css" rel="stylesheet" />
+<script src="${pageContext.request.contextPath}/resources/js/myuploadfunction.js"></script> --%>
 
     <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js"></script>
-<%--     <script src="${pageContext.request.contextPath}/resources/js/jquery.dataTables.js"></script> --%>
-<%--     <script src="${pageContext.request.contextPath}/resources/js/jput.min.js"></script> --%>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.dataTables.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jput.min.js"></script>
     
     
     <!-- file uploader -->
