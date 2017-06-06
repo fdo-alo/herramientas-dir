@@ -25,6 +25,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	         .antMatchers("/resources/**"); // #3
 	  }
 	
-	
+
 
 }
