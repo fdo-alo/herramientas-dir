@@ -11,7 +11,13 @@ $(function(){
 <script>
 function obtainSecondLevel()
 {
-	$("#primerNivel").change(function() {			
+	$("#primerNivel").change(function() {
+		
+		$(document).ajaxSend(function(elm, xhr, s){
+		    if (s.type == "POST") {
+		        xhr.setRequestHeader('x-csrf-token', "${_csrf.token}");
+		    }
+		});
 
 		$.ajax({
 			type: "POST",
@@ -49,6 +55,13 @@ function obtainSecondLevel()
 
 function obtainThirdLevel()
 {
+	
+	$(document).ajaxSend(function(elm, xhr, s){
+	    if (s.type == "POST") {
+	        xhr.setRequestHeader('x-csrf-token', "${_csrf.token}");
+	    }
+	});
+	
 	$("#segundoNivel").change(function() {			
 
 		$.ajax({
@@ -83,7 +96,13 @@ function obtainThirdLevel()
 
 <script type="text/javascript">
 	$(document).ready(function() {		
-		$("#delegacion").change(function() {			
+		$("#delegacion").change(function() {
+			
+			$(document).ajaxSend(function(elm, xhr, s){
+			    if (s.type == "POST") {
+			        xhr.setRequestHeader('x-csrf-token', "${_csrf.token}");
+			    }
+			});
 
 			$.ajax({
 				type: "POST",
