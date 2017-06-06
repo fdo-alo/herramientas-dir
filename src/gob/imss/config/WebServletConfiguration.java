@@ -15,17 +15,26 @@ public class WebServletConfiguration implements WebApplicationInitializer {
 
 	public void onStartup(ServletContext ctx) throws ServletException {
 		AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
-        appContext.register(SpringConfig.class);       
+		
+		Class<?>[]  configurationClasses = new Class<?>[] {
+			SpringConfig.class, SpringSecurityConfig.class
+	    };
+		
+        appContext.register(configurationClasses);
+               
         ServletRegistration.Dynamic dispatcher = ctx.addServlet(
-                "dispatcher", new DispatcherServlet(appContext));
+                "dispatcher", new DispatcherServlet(appContext));       
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
         
+        
         FilterRegistration.Dynamic filter = ctx.addFilter("OpenSessionInViewFilter", OpenSessionInViewFilter.class);        
         filter.setInitParameter("singleSession", "true");
-        filter.addMappingForServletNames(null, true, "dispatcher");
+        filter.addMappingForServletNames(null, true, "dispatcher");             
+        
         
         ctx.addListener(new ContextLoaderListener(appContext));
+        
         
 
 	}
