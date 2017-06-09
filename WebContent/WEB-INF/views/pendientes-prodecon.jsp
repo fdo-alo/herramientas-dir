@@ -10,6 +10,13 @@
 
 <script>
 $(document).ready(function() {
+	$(document).ajaxSend(function(elm, xhr, s){
+	    if (s.type == "POST") {
+	        xhr.setRequestHeader('x-csrf-token', "${_csrf.token}");
+	    }
+	});
+	
+	
 	$("#reporte").click(function(){
 				
 		pend = "";

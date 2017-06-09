@@ -286,7 +286,7 @@ public class ProdeconController {
 
 			nombreCarpeta = URLEncoder.encode(nombreCarpeta, "UTF-8");
 			
-			prodecon.setDigital("ftp://localhost/"+nombreCarpeta.replace("%2F", "/").replace("+", "%20"));
+			prodecon.setDigital("ftp://localhost/"+nombreCarpeta.replace("%2F", "/").replace("+", "%20").replace("%C3%B1", "ñ"));
 			
 
 			prodeconService.saveProdecon(prodecon);
