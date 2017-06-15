@@ -5,14 +5,8 @@
 <%@page session="false"%>
 <h1>Prodecon</h1>
 
-<c:url value="/j_spring_security_logout" var="logoutUrl" />
-
-<c:if test='${resultado!="" && resultado!=null && resultado!="Error"}'>
-	<div class="alert alert-success">${resultado}</div>
-</c:if>
-
-<c:if test='${resultado!="" && resultado!=null && resultado=="Error"}'>
-	<div class="alert alert-error">Error desconocido no se guardo el registro</div>
+<c:if test='${resultado!="" && resultado!=null}'>
+	<div class="alert ${alert}">${resultado}</div>
 </c:if>
 
 <table class="table table-striped table-bordered">

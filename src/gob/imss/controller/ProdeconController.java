@@ -21,6 +21,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -40,10 +41,12 @@ import com.google.gson.Gson;
 
 import gob.imss.config.FTPUpload;
 import gob.imss.entity.Prodecon;
+import gob.imss.entity.Usuario;
 import gob.imss.service.DelegacionesService;
 import gob.imss.service.NivelesService;
 import gob.imss.service.ProdeconService;
 import gob.imss.service.TipoDeAcuerdoDefinitivoService;
+import gob.imss.service.UsuarioService;
 
 @Controller
 public class ProdeconController {
@@ -62,6 +65,10 @@ public class ProdeconController {
 
 	@Autowired
 	private TipoDeAcuerdoDefinitivoService tipoDeAcuerdoDefinitivoService;
+	
+	@Autowired
+	
+	private UsuarioService usuarioService;
 
 	@RequestMapping("/")
 	public String home(Model model) {
@@ -70,11 +77,12 @@ public class ProdeconController {
 	}
 
 	@RequestMapping("/prodecon")
-	public String startProdecon(Model model, @ModelAttribute("resultado") String resultado) {
+	public String startProdecon(Model model, @ModelAttribute("resultado") String resultado, @ModelAttribute("alert") String alerta) {
 
 		List<Prodecon> prodecon = prodeconService.getProdecon();
 		model.addAttribute("prodecon", prodecon);
 		model.addAttribute(resultado);
+		model.addAttribute("alert", alerta);
 
 		return "inicio-prodecon";
 	}
@@ -290,12 +298,16 @@ public class ProdeconController {
 			
 
 			prodeconService.saveProdecon(prodecon);
+			
+			ra.addFlashAttribute("resultado", "Registro agregado con exito");
+			ra.addFlashAttribute("alert", "alert-success");
 
 			return "redirect:/prodecon";
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			ra.addFlashAttribute("resultado", "Error");
+			ra.addFlashAttribute("resultado", "Error al agregar el registro");
+			ra.addFlashAttribute("alert", "alert-danger");
 			return "redirect:/prodecon";
 		}
 		
@@ -354,6 +366,64 @@ public class ProdeconController {
 	public String showReportesProdecon(Model model) {
 
 		return "pendientes-prodecon";
+	}
+	
+	
+	@RequestMapping("/login")
+	public String showLogin(Model model) {
+
+		return "login";
+	}
+	
+	@RequestMapping("/403")
+	public String show403(Model model) {
+
+		return "403";
+	}
+	
+	
+	@GetMapping("/admin/create")
+	public String showCreateUser(Model model) {
+		
+		Usuario usuario = new Usuario();
+		
+		model.addAttribute("titulo", "Agregar un nuevo usuario");
+		model.addAttribute("usuario", usuario);
+
+		return "create-user";
+	}
+	
+	
+	@PostMapping("/admin/create")
+	public String addCreateUser(Model model, @ModelAttribute("usuario") @Valid Usuario usuario, BindingResult result,
+			RedirectAttributes ra) {
+		
+		if (result.hasErrors()) {
+		
+		model.addAttribute("titulo", "Agregar un nuevo usuario");
+		
+		 return "create-user";
+		}
+		
+		try{
+			ra.addFlashAttribute("resultado", "Usuario agregado con exito");
+			ra.addFlashAttribute("alert", "alert-success");
+			//System.out.println("El password sin encode : " + usuario.getPassword());
+			usuario.setPassword(new BCryptPasswordEncoder().encode(usuario.getPassword()));
+			usuario.setEnabled(true);
+			//System.out.println("El password con encode : " + usuario.getPassword());
+			usuarioService.saveUsuario(usuario);
+			return "redirect:/prodecon";	
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			ra.addFlashAttribute("resultado", "Error al agregar al usuario");
+			ra.addFlashAttribute("alert", "alert-danger");
+			return "redirect:/prodecon";
+		}
+		
+		
+		
 	}
 
 	@RequestMapping(value = "/prodecon/reporte", method = RequestMethod.POST, produces = "application/json")

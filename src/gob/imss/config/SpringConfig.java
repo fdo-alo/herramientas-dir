@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -49,6 +51,17 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
 	 
 	    return dataSource;
 	}
+	
+	@Bean(name="userDetailsService")
+	public UserDetailsService userDetalService()
+	{
+		JdbcDaoImpl jdbcDaoImpl = new JdbcDaoImpl();
+		jdbcDaoImpl.setDataSource(getDataSource());
+		jdbcDaoImpl.setUsersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?");			
+		jdbcDaoImpl.setAuthoritiesByUsernameQuery("SELECT username, authority FROM users WHERE username = ?");
+		return jdbcDaoImpl;
+	}
+	
 	
 	@Autowired
 	@Bean(name = "sessionFactory")
