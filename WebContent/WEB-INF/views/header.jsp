@@ -9,7 +9,7 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
+<link rel="icon" href="${pageContext.request.contextPath}/resources/images/imss.png">
 
 <title>Herramientas DIR</title>
 <link
@@ -120,8 +120,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href='<c:url value="/"/>'>Herramientas
-					DIR</a>
+				<a class="navbar-brand" href='<c:url value="/"/>'>Herramientas DIR</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">

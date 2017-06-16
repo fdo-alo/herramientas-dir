@@ -36,8 +36,9 @@
 	<label for="example-text-input" class="col-xs-4 col-form-label">Rol</label>
 	<div class="col-xs-8">
 	<sf:select type="text" cssClass="form-control" path="authority" id="authority">
-	<sf:option value="USER" >USER</sf:option>
-	<sf:option value="ADMIN">ADMIN</sf:option>	
+	<sf:option value="USER" >USER (solo consulta)</sf:option>
+	<sf:option value="CAPTURE">CAPTURE (consulta y captura)</sf:option>
+	<sf:option value="ADMIN">ADMIN (consulta captura y agregar usuarios)</sf:option>	
 	</sf:select>
 		<sf:errors path="authority" cssStyle="color:red"/>
 	</div>
