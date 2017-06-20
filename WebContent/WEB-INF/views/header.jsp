@@ -143,8 +143,7 @@
 							<li><a href="${pageContext.request.contextPath}/inai">Mostrar</a></li>
 							<li><a
 								href="${pageContext.request.contextPath}/inai/agregar">Agregar</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/inai/reportes">Reporte pendientes</a></li>
+							
 							<!--  li> class="dropdown-header">Nav header</li-->
 						</ul></li>
 						
