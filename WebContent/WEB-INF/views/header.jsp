@@ -135,6 +135,21 @@
 								href="${pageContext.request.contextPath}/prodecon/reportes">Reporte pendientes</a></li>
 							<!--  li> class="dropdown-header">Nav header</li-->
 						</ul></li>
+						
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Inai <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${pageContext.request.contextPath}/inai">Mostrar</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/inai/agregar">Agregar</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/inai/reportes">Reporte pendientes</a></li>
+							<!--  li> class="dropdown-header">Nav header</li-->
+						</ul></li>
+						
+						
+						
 					<li><a href="${pageContext.request.contextPath}/admin/create">Agregar Usuario</a></li>
 
 					<sec:authentication var="principal" property="principal" />
