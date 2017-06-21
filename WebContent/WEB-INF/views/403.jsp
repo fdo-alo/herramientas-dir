@@ -9,12 +9,17 @@
 		<div class="alert alert-danger col-xs-12">
 			<h2>Usted no tiene permiso para acceder a esta página!</h2>
 		</div>
-	</div>
+	</div>	
 	<div class="row">
-		<div class="col-xs-offset-4 col-xs-4">
-			<span style="font-style: italic; font-size: 5em; font-family: Snell Roundhand, cursive; font-weight: bold; color: red">Error 403</span>
+		<div class="col-xs-12 col-md-offset-4 col-md-4">
+			<img class="img-responsive" alt="" src="${pageContext.request.contextPath}/resources/images/errorstop.png">
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<br/><br/>
+		</div>
+	</div>		
 	<div class="row">
 		<div class="col-xs-12 col-md-6">
 			<a class="btn btn-info" href="${pageContext.request.contextPath}/">Regresar

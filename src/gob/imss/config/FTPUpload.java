@@ -9,7 +9,7 @@ import org.apache.commons.net.ftp.FTPClient;
 
 public class FTPUpload {
 
-	String server = "localhost";
+	String server = SpringConfig.direccionIP;
 	int port = 21;
 	String user = "anonymous";
 	String pass = "";

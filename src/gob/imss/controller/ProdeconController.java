@@ -1,10 +1,8 @@
 package gob.imss.controller;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -40,6 +38,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.google.gson.Gson;
 
 import gob.imss.config.FTPUpload;
+import gob.imss.config.SpringConfig;
 import gob.imss.entity.Prodecon;
 import gob.imss.entity.Usuario;
 import gob.imss.service.DelegacionesService;
@@ -270,31 +269,20 @@ public class ProdeconController {
 			quejaDir = quejaDir.replace("\\", "-");
 			quejaDir = quejaDir.replace("/", "-");
 			quejaDir = quejaDir.replace(":", ".");
-			quejaDir = quejaDir.replace(";", ",");
-			String promoventeDir = prodecon.getPromovente();
-			promoventeDir = promoventeDir.replace("\\", "-");
-			promoventeDir = promoventeDir.replace("/", "-");
-			promoventeDir = promoventeDir.replace(":", ".");
-			promoventeDir = promoventeDir.replace(";", ",");
-
-			Calendar cal = Calendar.getInstance();
+			quejaDir = quejaDir.replace(";", ",");			
 
 			 String nombreCarpeta =
 			 "quejas" + "/"
-			 + String.valueOf(cal.get(Calendar.YEAR)) + "-"
-			 + promoventeDir + "-" + quejaDir + "/";
-			
+			+ prodecon.getNumero() + "/";			
 			 
 
 //			String nombreCarpeta = System.getProperty("catalina.base") + File.separator + "webapps" + File.separator
 //					+ "quejas" + File.separator + String.valueOf(cal.get(Calendar.YEAR)) + " - " + promoventeDir + " - "
 //					+ quejaDir + File.separator;
 			
-			new FTPUpload(nombreCarpeta);
-
-			nombreCarpeta = URLEncoder.encode(nombreCarpeta, "UTF-8");
+			new FTPUpload(nombreCarpeta);			
 			
-			prodecon.setDigital("ftp://localhost/"+nombreCarpeta.replace("%2F", "/").replace("+", "%20").replace("%C3%B1", "ñ"));
+			prodecon.setDigital("ftp://"+SpringConfig.direccionIP+"/"+nombreCarpeta);
 			
 
 			prodeconService.saveProdecon(prodecon);

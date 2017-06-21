@@ -30,6 +30,9 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan("gob.imss")
 @EnableTransactionManagement
 public class SpringConfig extends WebMvcConfigurerAdapter {
+	
+	//public static String direccionIP = "172.24.29.176";
+	public static String direccionIP = "localhost";
 		
 
 	@Bean(name = "viewResolver")
@@ -45,7 +48,7 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
 	public DataSource getDataSource() {
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("org.postgresql.Driver");
-	    dataSource.setUrl("jdbc:postgresql://localhost:5432/acuerdos");
+	    dataSource.setUrl("jdbc:postgresql://"+direccionIP+":5432/acuerdos");
 	    dataSource.setUsername("postgres");
 	    dataSource.setPassword("postgres");
 	 

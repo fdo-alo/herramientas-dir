@@ -1,10 +1,8 @@
 package gob.imss.controller;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +31,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.google.gson.Gson;
 
 import gob.imss.config.FTPUpload;
+import gob.imss.config.SpringConfig;
 import gob.imss.entity.Inai;
 import gob.imss.service.InaiService;
 
@@ -93,15 +92,10 @@ public class InaIController {
 		try {
 
 			System.out.println("número: " + inai.getId());
-			String quejaDir =  "" + inai.getId();	
 			
-
-			Calendar cal = Calendar.getInstance();
-
 			 String nombreCarpeta =
-			 "inai" + "/"
-			 + String.valueOf(cal.get(Calendar.YEAR)) + "-"
-			 + quejaDir + "/";
+			 "inai" + "/"			 
+			 + inai.getId() + "/";
 			
 			 
 
@@ -110,11 +104,9 @@ public class InaIController {
 //					+ quejaDir + File.separator;
 			
 			new FTPUpload(nombreCarpeta);
-
-			nombreCarpeta = URLEncoder.encode(nombreCarpeta, "UTF-8");
 			
 			//inai.setDigital("ftp://172.24.29.176/"+nombreCarpeta.replace("%2F", "/").replace("+", "%20").replace("%C3%B1", "ñ"));
-			inai.setDigital("ftp://localhost/"+nombreCarpeta.replace("%2F", "/").replace("+", "%20").replace("%C3%B1", "ñ"));
+			inai.setDigital("ftp://"+SpringConfig.direccionIP+"/" + nombreCarpeta);
 			
 
 			inaiService.saveInai(inai);

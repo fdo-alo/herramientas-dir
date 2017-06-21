@@ -145,14 +145,16 @@
 								href="${pageContext.request.contextPath}/inai/agregar">Agregar</a></li>
 							
 							<!--  li> class="dropdown-header">Nav header</li-->
-						</ul></li>
+						</ul></li>					
 						
 						
-						
-					<li><a href="${pageContext.request.contextPath}/admin/create">Agregar Usuario</a></li>
-
-					<sec:authentication var="principal" property="principal" />
-					<li><a>¡Bienvenido ${principal.username}!</a></li>
+					<!-- li><a href="${pageContext.request.contextPath}/admin/create">Agregar Usuario</a></li-->
+					
+					
+						<!-- sec:authentication var="principal" property="principal" />
+						<li><a>¡Bienvenido ${principal.username}!</a></li-->
+					
+					
 					<li><a href='<c:url value="/logout"/>'>Cerrar Sesión</a></li>
 				</ul>
 
